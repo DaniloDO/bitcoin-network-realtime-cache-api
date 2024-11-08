@@ -44,7 +44,6 @@ class CoingeckoController {
             res.status(500).json({message: 'Unable to retrieve bitcoin historical chart data'});        
         }
     }
-
 }
 
 export default CoingeckoController; 

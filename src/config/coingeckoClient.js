@@ -6,9 +6,8 @@ dotenv.config();
 // CoingeckoClient class responsible for managing HTTP requests to CoinGecko API
 class CoingeckoClient {
     constructor() {
-
         // Check if an instance of CoingeckoClient already exists
-        if(!CoingeckoClient.instance){
+        if(!CoingeckoClient.instance) {
             // Create an Axios client with predefined configuration (baseURL, timeout, headers)
             this.client = axios.create({
                 baseURL: process.env.COINGECKO_API_URL,

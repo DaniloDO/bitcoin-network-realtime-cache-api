@@ -68,7 +68,6 @@ class CoinGeckoRepository {
             throw error;
         }
     }
-
 }
 
 export default CoinGeckoRepository; 
