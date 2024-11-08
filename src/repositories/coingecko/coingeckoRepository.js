@@ -1,4 +1,3 @@
-
 // CoingeckoRepository class responsible of fetching data from CoinGecko’s API
 class CoinGeckoRepository {
     constructor(coinGeckoClient) {
@@ -68,7 +67,6 @@ class CoinGeckoRepository {
             throw error;
         }
     }
-
 }
 
 export default CoinGeckoRepository; 

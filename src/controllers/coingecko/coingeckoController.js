@@ -36,7 +36,7 @@ class CoingeckoController {
 
         try {
             const data = await this.coingeckoService.getBitcoinHistoricalChartData(days);
-            res.status(500).json({data});
+            res.status(200).json({data});
         }
 
         catch(error) {
@@ -44,7 +44,6 @@ class CoingeckoController {
             res.status(500).json({message: 'Unable to retrieve bitcoin historical chart data'});        
         }
     }
-
 }
 
 export default CoingeckoController; 
