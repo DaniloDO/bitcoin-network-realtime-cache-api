@@ -1,9 +1,9 @@
 //import all necessary dependencies and layers
 import express from "express" ;
 import coinGeckoClient from "../config/coingeckoClient.js";
-import CoinGeckoRepository from "../repositories/coingeckoRepository.js";
-import CoingeckoService from "../services/coingeckoService.js";
-import CoingeckoController from "../controllers/coingeckoController.js";
+import CoinGeckoRepository from "../repositories/coingecko/coingeckoRepository.js";
+import CoingeckoService from "../services/coingecko/coingeckoService.js";
+import CoingeckoController from "../controllers/coingecko/coingeckoController.js";
 
 const coingeckoRouter = express.Router();
 

@@ -1,4 +1,4 @@
-import redisClient from "../config/redisClient.js";
+import redisClient from "../../config/redisClient.js"
 
 //CoingeckoService class to interact with the CoinGecko's API, and handle business logic.
 class CoingeckoService {
