@@ -1,6 +1,6 @@
 import redisClient from "../../config/redisClient.js"
 
-//CoingeckoService class to interact with the CoinGecko's API, and handle business logic.
+// CoingeckoService class to interact with the CoinGecko's API, and handle business logic.
 class CoingeckoService {
     constructor(coingeckoRepository) {
         this.coingeckoRepository = coingeckoRepository;
@@ -9,10 +9,10 @@ class CoingeckoService {
     // Fetch bitcoin price, market cap, and 24hr volume and changes
     async getBitcoinSimpleData() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'bitcoin:simple-data';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved data from Redis cache');
@@ -38,10 +38,10 @@ class CoingeckoService {
     // Fetch all available bitcoin data
     async getBitcoinDetailedData() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'bitcoin:detailed-data';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved data from Redis cache');
@@ -67,10 +67,10 @@ class CoingeckoService {
     // Fetch bitcoin historical chart data 
     async getBitcoinHistoricalChartData(days = 30){
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'bitcoin:historical-chart-data';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieve data from Redis');
