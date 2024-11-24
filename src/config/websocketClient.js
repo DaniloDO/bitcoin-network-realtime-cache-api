@@ -7,7 +7,7 @@ dotenv.config();
 // WebsocketClient class responsible for managing connection to Mempool WebSocket
 class WebsocketClient extends EventEmitter {
     constructor() {
-        //Invokes parent class constructor to use EventEmitter methods
+        // Invokes parent class constructor to use EventEmitter methods
         super(); 
 
         // Check if an instance of RedisClient already exists
