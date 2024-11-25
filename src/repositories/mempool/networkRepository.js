@@ -4,7 +4,7 @@ class NetworkRepository {
         this.mempoolClient = mempoolClient.getClient();
     }
 
-    //Fetch details of difficulty-adjustment (Block timestamp, Block height, Difficulty, Difficulty change)
+    // Fetch details of difficulty-adjustment (Block timestamp, Block height, Difficulty, Difficulty change)
     async getDifficultAdjustment() {
         try {
             const response = await this.mempoolClient.get('v1/mining/difficulty-adjustments/1m');
@@ -17,7 +17,7 @@ class NetworkRepository {
         }
     }
 
-    //Fetch details of hashrate
+    // Fetch details of hashrate
     async getHashRate() {
         try {
             const response = await this.mempoolClient.get('v1/mining/hashrate/3d');
