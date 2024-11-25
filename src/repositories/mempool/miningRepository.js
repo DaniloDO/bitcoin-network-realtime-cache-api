@@ -1,4 +1,4 @@
-
+// MiningRepository class responsible of fetching mempool data from Mempool’s API
 class MiningRepository {
     constructor(mempoolClient) {
         this.mempoolClient = mempoolClient.getClient();
