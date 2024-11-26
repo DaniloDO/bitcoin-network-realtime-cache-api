@@ -1,6 +1,6 @@
 import redisClient from "../../config/redisClient.js";
 
-//BlocksService class to interact with the Mempool's API, and handle business logic.
+// BlocksService class to interact with the Mempool's API, and handle business logic.
 class BlocksService {
     constructor(blocksRepository) {
         this.blocksRepository = blocksRepository;
@@ -9,10 +9,10 @@ class BlocksService {
     // Fetch the past 15 blocks with fee and mining details 
     async getRecentBlocks() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:recent-blocks';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool recent blocks data from Redis cache');
@@ -38,10 +38,10 @@ class BlocksService {
     // Fetch details about a block
     async getBlockDetails(blockHash) {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:block-details';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool block details data from Redis cache');
@@ -68,10 +68,10 @@ class BlocksService {
    // Fetch the confirmation status of a block
     async getBlockStatus(blockHash) {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:block-status';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool block status data from Redis cache');

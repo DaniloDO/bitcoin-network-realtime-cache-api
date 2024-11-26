@@ -1,6 +1,6 @@
 import redisClient from "../../config/redisClient.js";
 
-//NetworkService class to interact with the Mempool's API, and handle business logic.
+// NetworkService class to interact with the Mempool's API, and handle business logic.
 class MiningService {
     constructor(miningRepository) {
         this.miningRepository = miningRepository; 
@@ -9,10 +9,10 @@ class MiningService {
     // Fetch a list of all known mining pools 
     async getAllMiningPools() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:mining-pools';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved all mempool mining pools data from Redis cache');
@@ -38,10 +38,10 @@ class MiningService {
     // Fetch details of specific mining pool 
     async getMiningPool(slug) {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:mining-pool';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool mining pool data from Redis cache');
@@ -67,10 +67,10 @@ class MiningService {
     // Fetch past 10 blocks mined by the specified mining pool 
     async getMiningPoolBlocks(slug) {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:pool-blocks';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool mining pool blocks data from Redis cache');

@@ -1,6 +1,6 @@
 import redisClient from "../../config/redisClient.js";
 
-//MempoolStatsService class to interact with the Mempool's API, and handle business logic.
+// MempoolStatsService class to interact with the Mempool's API, and handle business logic.
 class MempoolStatsService {
     constructor(mempoolRepository) {
         this.mempoolRepository = mempoolRepository;
@@ -9,10 +9,10 @@ class MempoolStatsService {
     // Fetch current mempool backlog statistics.
     async getMempoolStats() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:stats'; 
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool stats data from Redis cache');
