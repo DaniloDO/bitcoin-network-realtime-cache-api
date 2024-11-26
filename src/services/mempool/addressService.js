@@ -1,6 +1,6 @@
 import redisClient from "../../config/redisClient.js";
 
-//AddressService class to interact with the Mempool's API, and handle business logic.
+// AddressService class to interact with the Mempool's API, and handle business logic.
 class AddressService {
     constructor(addressRepository) {
         this.addressRepository = addressRepository; 
@@ -9,10 +9,10 @@ class AddressService {
     // Fetch details about a specific address
     async getAddress(address) {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:address';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool address data from Redis cache');
@@ -38,10 +38,10 @@ class AddressService {
     // Fetch transaction history for the specified address (50 mempool transactions plus the first 25 confirmed transactions)
     async getAddressTransactions(address) {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:address-tx';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool transactions address data from Redis cache');

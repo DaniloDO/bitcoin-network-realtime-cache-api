@@ -1,18 +1,18 @@
 import redisClient from "../../config/redisClient.js";
 
-//NetworkService class to interact with the Mempool's API, and handle business logic.
+// NetworkService class to interact with the Mempool's API, and handle business logic.
 class NetworkService {
     constructor(networkRepository) {
         this.networkRepository = networkRepository; 
     }
 
-    //Fetch details of difficulty-adjustment (Block timestamp, Block height, Difficulty, Difficulty change)
+    // Fetch details of difficulty-adjustment (Block timestamp, Block height, Difficulty, Difficulty change)
     async getDifficultAdjustment() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:difficulty-adjustment';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool difficulty-adjustment data from Redis cache');
@@ -35,13 +35,13 @@ class NetworkService {
         }
     }
 
-    //Fetch details of hashrate
+    // Fetch details of hashrate
     async getHashRate() {
         try {
-            //Create key to search data in Redis
+            // Create key to search data in Redis
             const cacheKey = 'mempool:hashrate';
 
-            //Check for data in Redis
+            // Check for data in Redis
             const cacheData = await redisClient.getClient().get(cacheKey);
             if(cacheData) {
                 console.log('Retrieved mempool hashrate data from Redis cache');
