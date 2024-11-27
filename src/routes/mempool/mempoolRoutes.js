@@ -1,4 +1,4 @@
-//import all necessary dependencies and routers
+// import all necessary dependencies and routers
 import express from "express";
 import feesRouter from "./feesRoutes.js";
 import blocksRouter from "./blocksRoutes.js";
