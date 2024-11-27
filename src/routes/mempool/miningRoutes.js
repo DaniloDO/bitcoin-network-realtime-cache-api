@@ -1,4 +1,4 @@
-//import all necessary dependencies and layers
+// import all necessary dependencies and layers
 import express from "express" ;
 import mempoolClient from "../../config/mempoolClient.js";
 import MiningRepository from "../../repositories/mempool/miningRepository.js";
