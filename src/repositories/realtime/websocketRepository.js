@@ -30,7 +30,6 @@ class WebsocketRepository {
 
                     //Store fetched data in Redis cache with an adjustable expiration rate
                     await redisClient.getClient().set(cacheKey, JSON.stringify(data[key]), {'EX': expiration});
-                    // console.log(`${key} data stored in Redis cache.`);  
                 }
             });
         }
@@ -46,7 +45,6 @@ class WebsocketRepository {
     getLatestData() {
         return this.latestData; 
     }
-
 }
 
 export default WebsocketRepository; 
