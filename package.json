@@ -4,7 +4,9 @@
   "description": "A high-performance API delivering real-time Bitcoin network data with WebSocket streaming, Redis caching, and MongoDB for user authentication and data persistence.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "NODE_ENV=development node app.js",
+    "start:sta": "NODE_ENV=staging docker compose up --build"
   },
   "author": "Danilo D.",
   "license": "ISC",
