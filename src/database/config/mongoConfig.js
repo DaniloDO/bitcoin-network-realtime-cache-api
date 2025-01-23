@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 
-dotenv.config();
+const environment = process.env.NODE_ENV || "development";
+dotenv.config({ path: `${environment}.env`}); 
 
 // MongoConnection class responsible for creating the connection with MongoDB using mongoose
 class MongoConnection {
@@ -18,7 +19,13 @@ class MongoConnection {
     // Create an mongoose connection with predefined configuration
     async _connect() {
         try {
-            await mongoose.connect(process.env.MONGO_URI);
+            await mongoose.connect(process.env.MONGO_URI, {
+                user: process.env.USER_MONGO,
+                pass: process.env.PASS_MONGO,
+                authMechanism: "DEFAULT",
+                authSource: "admin"
+            });
+            
             console.log('MongoDB connected');
         }
         catch(error) {
