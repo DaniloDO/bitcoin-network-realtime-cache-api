@@ -1,7 +1,8 @@
 import axios from "axios";
 import dotenv from 'dotenv';
 
-dotenv.config();
+const environment = process.env.NODE_ENV || "development";
+dotenv.config({ path: `${environment}.env`}); 
 
 // CoingeckoClient class responsible for managing HTTP requests to CoinGecko API
 class CoingeckoClient {
@@ -16,6 +17,7 @@ class CoingeckoClient {
                     'Content-Type': 'application/json',
                 }
             });
+
             // Store the instance in CoingeckoClient.instance to prevent multiple instances from being created
             CoingeckoClient.instance = this;
         }
