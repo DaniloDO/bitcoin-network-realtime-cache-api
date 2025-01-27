@@ -1,7 +1,8 @@
 import axios from "axios";
 import dotenv from 'dotenv';
 
-dotenv.config();
+const environment = process.env.NODE_ENV || "development";
+dotenv.config({ path: `${environment}.env`}); 
 
 // MempoolClient class responsible for managing HTTP requests to Mempool API
 class MempoolClient {
