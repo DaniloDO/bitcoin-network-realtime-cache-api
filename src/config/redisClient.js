@@ -1,7 +1,8 @@
 import redis from 'redis';
 import dotenv from 'dotenv';
 
-dotenv.config();
+const environment = process.env.NODE_ENV || "development";
+dotenv.config({ path: `${environment}.env`}); 
 
 // RedisClient class responsible for managing server connection to Redis
 class RedisClient {
